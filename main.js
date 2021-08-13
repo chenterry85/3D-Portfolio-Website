@@ -1,4 +1,4 @@
-import './style.css'
+import './assets/css/style.css'
 
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
@@ -37,8 +37,8 @@ const torus = new THREE.Mesh( geometry, material )
 scene.add( torus )
 
 // asteroid
-const asteroidTexture = new THREE.TextureLoader().load( 'asteroid_texture.jpg' )
-const normalTexture = new THREE.TextureLoader().load ( 'normal.jpg' )
+const asteroidTexture = new THREE.TextureLoader().load( 'assets/img/asteroid_texture.jpg' )
+const normalTexture = new THREE.TextureLoader().load ( 'assets/img/normal.jpg' )
 const asteroid = new THREE.Mesh(
   new THREE.SphereGeometry( 3, 30, 30),
   new THREE.MeshBasicMaterial( { 
@@ -51,7 +51,7 @@ asteroid.position.x = -10
 scene.add( asteroid )
 
 // Face Cube Mesh
-const faceTexture = new THREE.TextureLoader().load( 'face1.jpg' )
+const faceTexture = new THREE.TextureLoader().load( 'assets/img/face1.jpg' )
 const faceCube = new THREE.Mesh(
   new THREE.BoxGeometry( 3, 3, 3 ),
   new THREE.MeshBasicMaterial( { map: faceTexture } )
@@ -72,7 +72,7 @@ function addStar(){
 Array(200).fill().forEach( addStar )
 
 // Space Background
-const spaceTexture = new THREE.TextureLoader().load( 'space.jpg' )
+const spaceTexture = new THREE.TextureLoader().load( 'assets/img/space.jpg' )
 scene.background = spaceTexture
 
 function moveCamera(){
